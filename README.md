@@ -1,4 +1,4 @@
-# Journey of Birth webapp
+# Journey of Birth webapp [![Build Status](https://travis-ci.org/DarinLevesque/journeyofbirth.svg?branch=master)](https://travis-ci.org/DarinLevesque/journeyofbirth)
 
 This app powers **Journey of Birth** Doula services website.
 
