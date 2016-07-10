@@ -1,70 +1,447 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Journey of Birth</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        {{#if showTests}}
-<link rel="stylesheet" href="/vendor/mocha.css">
-{{/if}}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Journey of Birth</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+    {{#if showTests}}
+        <link rel="stylesheet" href="/vendor/mocha.css">
+    {{/if}}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Journey of Birth</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Canvas Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu" class="dark">
+
+                        <ul>
+                            <li class="current"><a href="/"><div>Home</div></a>
+                            </li>
+                            <li><a href="/About"><div>About</div></a>
+                            </li>
+                            <li><a href="#"><div>Services</div></a>
+                                <ul>
+                                    <li><a href="shop.html"><div>Doula Maternity Support</div></a></li>
+                                    <li><a href="/services/#placenta"><div>Placenta</div></a>
+                                        <ul>
+                                            <li><a href="shop-3.html"><div>Tinctures</div></a></li>
+                                            <li><a href="shop-3-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-3-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-2.html"><div>2 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-2-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-2-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-2-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-1.html"><div>1 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-1.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-1-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-1-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-1-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-category-parallax.html"><div>Categories - Parallax</div></a></li>
+                                    <li><a href="shop-single.html"><div>Single Product</div></a>
+                                        <ul>
+                                            <li><a href="shop-single.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-single-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-single-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="cart.html"><div>Cart</div></a></li>
+                                    <li><a href="checkout.html"><div>Checkout</div></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><div>Portfolio</div></a>
+                            </li>
+                            <li><a href="#"><div>Blog</div></a>
+                            </li>
+                            <li><a href="shop.html"><div>Shop</div></a>
+                                <ul>
+                                    <li><a href="shop.html"><div>4 Columns</div></a></li>
+                                    <li><a href="shop-3.html"><div>3 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-3.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-3-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-3-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-2.html"><div>2 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-2-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-2-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-2-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-1.html"><div>1 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-1.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-1-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-1-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-1-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-category-parallax.html"><div>Categories - Parallax</div></a></li>
+                                    <li><a href="shop-single.html"><div>Single Product</div></a>
+                                        <ul>
+                                            <li><a href="shop-single.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-single-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-single-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="cart.html"><div>Cart</div></a></li>
+                                    <li><a href="checkout.html"><div>Checkout</div></a></li>
+                                </ul>
+                            </li>
+                            <li class="mega-menu"><a href="#"><div>Shortcodes</div></a>
+                                <div class="mega-menu-content clearfix">
+                                    <ul class="mega-menu-column col-5">
+                                        <li><a href="animations.html"><div><i class="icon-magic"></i>Animations</div></a></li>
+                                        <li><a href="buttons.html"><div><i class="icon-link"></i>Buttons</div></a></li>
+                                        <li><a href="carousel.html"><div><i class="icon-heart3"></i>Carousel</div></a></li>
+                                        <li><a href="charts.html"><div><i class="icon-bar-chart"></i>Charts</div></a></li>
+                                        <li><a href="clients.html"><div><i class="icon-apple"></i>Clients</div></a></li>
+                                        <li><a href="columns-grids.html"><div><i class="icon-th-large"></i>Columns</div></a></li>
+                                        <li><a href="counters.html"><div><i class="icon-time"></i>Counters</div></a></li>
+                                        <li><a href="component-datatable.html"><div><i class="icon-table"></i>Data Tables</div></a></li>
+                                        <li><a href="component-datepicker.html"><div><i class="icon-calendar3"></i>Date &amp; Time Pickers</div></a></li>
+                                    </ul>
+                                    <ul class="mega-menu-column col-5">
+                                        <li><a href="dividers.html"><div><i class="icon-indent-right"></i>Dividers</div></a></li>
+                                        <li><a href="featured-boxes.html"><div><i class="icon-lightbulb"></i>Icon Boxes</div></a></li>
+                                        <li><a href="gallery.html"><div><i class="icon-picture"></i>Galleries</div></a></li>
+                                        <li><a href="headings-dropcaps.html"><div><i class="icon-pencil2"></i>Heading Styles</div></a></li>
+                                        <li><a href="icon-lists.html"><div><i class="icon-list-alt"></i>Icon Lists</div></a></li>
+                                        <li><a href="labels-badges.html"><div><i class="icon-plus-sign"></i>Labels</div></a></li>
+                                        <li><a href="lightbox.html"><div><i class="icon-resize-full"></i>Lightbox</div></a></li>
+                                        <li><a href="component-editable.html"><div><i class="icon-edit"></i>Editable Fields</div></a></li>
+                                        <li><a href="component-uploads.html"><div><i class="icon-line-upload"></i>File Uploads</div></a></li>
+                                    </ul>
+                                    <ul class="mega-menu-column col-5">
+                                        <li><a href="lists-panels.html"><div><i class="icon-th-list"></i>Lists &amp; Panels</div></a></li>
+                                        <li><a href="maps.html"><div><i class="icon-map-marker2"></i>Maps</div></a></li>
+                                        <li><a href="media-embeds.html"><div><i class="icon-play"></i>Media Embeds</div></a></li>
+                                        <li><a href="modal-popovers.html"><div><i class="icon-move"></i>Modal Boxes</div></a></li>
+                                        <li><a href="navigation.html"><div><i class="icon-align-justify2"></i>Navigations</div></a></li>
+                                        <li><a href="pagination-progress.html"><div><i class="icon-cogs"></i>Pagination</div></a></li>
+                                        <li><a href="pie-skills.html"><div><i class="icon-tasks"></i>Pies &amp; Skills</div></a></li>
+                                        <li><a href="component-range-slider.html"><div><i class="icon-line-move"></i>Range Slider</div></a></li>
+                                        <li><a href="component-ratings.html"><div><i class="icon-star3"></i>Star Ratings</div></a></li>
+                                    </ul>
+                                    <ul class="mega-menu-column col-5">
+                                        <li><a href="pricing.html"><div><i class="icon-dollar"></i>Pricing Boxes</div></a></li>
+                                        <li><a href="process-steps.html"><div><i class="icon-thumbs-up"></i>Process Steps</div></a></li>
+                                        <li><a href="promo-boxes.html"><div><i class="icon-rocket"></i>Promo Boxes</div></a></li>
+                                        <li><a href="quotes-blockquotes.html"><div><i class="icon-quote-left"></i>Blockquotes</div></a></li>
+                                        <li><a href="responsive.html"><div><i class="icon-laptop2"></i>Responsive</div></a></li>
+                                        <li><a href="sections.html"><div><i class="icon-folder-open"></i>Sections</div></a></li>
+                                        <li><a href="social-icons.html"><div><i class="icon-facebook2"></i>Social Icons</div></a></li>
+                                        <li><a href="component-select-picker.html"><div><i class="icon-select"></i>Select Picker</div></a></li>
+                                        <li><a href="component-select-box.html"><div><i class="icon-line-columns"></i>Select Boxes</div></a></li>
+                                    </ul>
+                                    <ul class="mega-menu-column col-5">
+                                        <li><a href="style-boxes.html"><div><i class="icon-exclamation-sign"></i>Alert Boxes</div></a></li>
+                                        <li><a href="styled-icons.html"><div><i class="icon-flag2"></i>Styled Icons</div></a></li>
+                                        <li><a href="tables.html"><div><i class="icon-table"></i>Tables</div></a></li>
+                                        <li><a href="tabs.html"><div><i class="icon-star3"></i>Tabs</div></a></li>
+                                        <li><a href="testimonials-twitter.html"><div><i class="icon-user4"></i>Testimonials</div></a></li>
+                                        <li><a href="thumbnails-slider.html"><div><i class="icon-camera3"></i>Thumbnails</div></a></li>
+                                        <li><a href="toggles-accordions.html"><div><i class="icon-ok-circle"></i>Toggles</div></a></li>
+                                        <li><a href="component-radios-switches.html"><div><i class="icon-line-square-check"></i>Radios &amp; Switches</div></a></li>
+                                        <li><a href="component-typeahead.html"><div><i class="icon-type"></i>Input Typeahead</div></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Top Cart
+                        ============================================= -->
+                        <div id="top-cart">
+                            <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+                            <div class="top-cart-content">
+                                <div class="top-cart-title">
+                                    <h4>Shopping Cart</h4>
+                                </div>
+                                <div class="top-cart-items">
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Blue Round-Neck Tshirt</a>
+                                            <span class="top-cart-item-price">$19.99</span>
+                                            <span class="top-cart-item-quantity">x 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Light Blue Denim Dress</a>
+                                            <span class="top-cart-item-price">$24.99</span>
+                                            <span class="top-cart-item-quantity">x 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-cart-action clearfix">
+                                    <span class="fleft top-checkout-price">$114.95</span>
+                                    <button class="button button-3d button-small nomargin fright">View Cart</button>
+                                </div>
+                            </div>
+                        </div><!-- #top-cart end -->
+
+                        <!-- Top Search
+                        ============================================= -->
+                        <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                            </form>
+                        </div><!-- #top-search end -->
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+
+        </header><!-- #header end -->
+
+        {{{body}}}
+
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <div class="container">
+
+                <!-- Footer Widgets
+                ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+
+                    <div class="col_one_third">
+
+                        <div class="widget clearfix">
+
+                            <img src="/images/footer-widget-logo.png" alt="" class="footer-logo">
+
+                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards with a Retina &amp; Responsive Approach. Browse the amazing Features this template offers.</p>
+
+                            <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+                                <address>
+                                    <strong>Headquarters:</strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                </address>
+                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> 772-252-1018<br>
+                                <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
+                                <abbr title="Email Address"><strong>Email:</strong></abbr> Kelli@JourneyofBirth.com
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third">
+
+                        <div class="widget clearfix">
+                            <h4>Client Testimonials</h4>
+
+                            <div class="fslider testimonial no-image nobg noborder noshadow nopadding" data-animation="slide" data-arrows="false">
+                                <div class="flexslider">
+                                    <div class="slider-wrap">
+                                        <div class="slide">
+                                            <div class="testi-image">
+                                                <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+                                            </div>
+                                            <div class="testi-content">
+                                                <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                                                <div class="testi-meta">
+                                                    Steve Jobs
+                                                    <span>Apple Inc.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide">
+                                            <div class="testi-image">
+                                                <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+                                            </div>
+                                            <div class="testi-content">
+                                                <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+                                                <div class="testi-meta">
+                                                    Collis Ta'eed
+                                                    <span>Envato Inc.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide">
+                                            <div class="testi-image">
+                                                <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+                                            </div>
+                                            <div class="testi-content">
+                                                <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                                                <div class="testi-meta">
+                                                    John Doe
+                                                    <span>XYZ Inc.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="widget clearfix">
+
+                            <a href="https://www.facebook.com/jobdoula" class="social-icon si-small si-rounded si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="https://www.twitter.com/jobdoula" class="social-icon si-small si-rounded si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/journeyofbirth" class="social-icon si-small si-rounded si-instagram">
+                                <i class="icon-instagram"></i>
+                                <i class="icon-instagram"></i>
+                            </a>
+
+                             <a href="https://www.pinterest.com/journeyofbirth" class="social-icon si-small si-rounded si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third col_last">
+
+                        <div class="widget quick-contact-widget clearfix">
+
+                            <h4>Send Message</h4>
+
+                            <div class="quick-contact-form-result"></div>
+
+                            <form id="quick-contact-form" name="quick-contact-form" action="include/quickcontact.php" method="post" class="quick-contact-form nobottommargin">
+
+                                <div class="form-process"></div>
+
+                                <div class="input-group divcenter">
+                                    <span class="input-group-addon"><i class="icon-user"></i></span>
+                                    <input type="text" class="required form-control input-block-level" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Full Name" />
+                                </div>
+                                <div class="input-group divcenter">
+                                    <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                    <input type="text" class="required form-control email input-block-level" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="Email Address" />
+                                </div>
+                                <textarea class="required form-control input-block-level short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Message"></textarea>
+                                <input type="text" class="hidden" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="" />
+                                <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn btn-danger nomargin" value="submit">Send Email</button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
 
-	{{{body}}}
-         
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+                <div class="container clearfix">
 
-        <script src="js/main.js"></script>
+                    <div class="col_half">
+                        Copyrights &copy; 2016 All Rights Reserved by KD Ventures.
+                    </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <div class="copyrights-menu copyright-links nobottommargin">
+                                <a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -74,18 +451,18 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
         {{#if showTests}}
-			<div id="mocha"></div>
-			<script src="/vendor/mocha.js"></script>
-			<script src="/vendor/chai.js"></script>
-			<script>
-			mocha.ui('tdd');
-			var assert = chai.assert;
-			</script>
-			<script src="/qa/tests-global.js"></script>
-		{{#if pageTestScript}}
-				<script src="{{pageTestScript}}"></script>
-		{{/if}}
-			<script>mocha.run();</script>
-		{{/if}}
-    </body>
+            <div id="mocha"></div>
+            <script src="/vendor/mocha.js"></script>
+            <script src="/vendor/chai.js"></script>
+            <script>
+            mocha.ui('tdd');
+            var assert = chai.assert;
+            </script>
+            <script src="/qa/tests-global.js"></script>
+        {{#if pageTestScript}}
+                <script src="{{pageTestScript}}"></script>
+        {{/if}}
+            <script>mocha.run();</script>
+        {{/if}}
+</body>
 </html>
