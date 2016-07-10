@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 
 // app.get('/', function(req, res) {
@@ -12,10 +12,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/about', function(req, res) {
-    res.render('about', {
-        fortune: fortune.getFortune(),
-        pageTestScript: '/qa/tests-about.js'
-    });
+    res.render('about');
 });
 
 router.get('/services', function(req, res) {

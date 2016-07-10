@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var fortune = require('./lib/fortune.js');
+
+// *** routes *** //
+var routes = require('./routes/index.js');
 
 // set up handlebars view engine
 var handlebars = require('express-handlebars')
@@ -41,20 +45,12 @@ switch(app.get('env')){
 
 
 // routes go here....
-
-app.get('/', function(req, res) {
-    res.render('comingsoon', { layout: null });
-});
+app.use('/', routes);
 // app.get('/', function(req, res) {
-//     res.render('home');
+//     res.render('comingsoon', { layout: null });
 // });
 
-app.get('/about', function(req, res) {
-    res.render('about', {
-        fortune: fortune.getFortune(),
-        pageTestScript: '/qa/tests-about.js'
-    });
-});
+
 // 404 catch-all handler (middleware)
 app.use(function(req, res, next) {
     res.status(404);
