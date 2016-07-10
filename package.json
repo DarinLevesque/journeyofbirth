@@ -23,6 +23,7 @@
     "grunt": "^1.0.1",
     "grunt-cafe-mocha": "^0.1.13",
     "grunt-contrib-jshint": "^1.0.0",
+    "grunt-exec": "^1.0.0",
     "mocha": "^2.5.3",
     "zombie": "^4.2.1"
   }
