@@ -1,8 +1,7 @@
 language: node_js
 node_js:
   - "6"
-  - "6.1"
   - "5"
 before_script:
-  - npm install -g grunt grunt-cli
+  - npm install -g grunt grunt-cli grunt-exec
 script: grunt
