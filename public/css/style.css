@@ -2952,10 +2952,10 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 }
 
 .slider-caption h2 {
+	font-family: 'Calligraffitti', cursive;
 	font-size: 64px;
 	letter-spacing: 2px;
-	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1;
 	margin-bottom: 30px;
 }
