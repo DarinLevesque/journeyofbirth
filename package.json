@@ -16,7 +16,6 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express-logger": "0.0.3",
-    "express-seo": "0.0.1",
     "morgan": "^1.7.0",
     "node-phpfpm": "^1.0.1",
     "sendgrid": "^3.0.8"

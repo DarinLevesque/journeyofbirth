@@ -4,9 +4,6 @@ var bodyParser = require('body-parser');
 var PHPFPM = require('node-phpfpm');
 var fortune = require('./lib/fortune.js');
 
-// *** sendgrid test *** //
-var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
-
 // *** Allow PHP *** //
 var phpfpm = new PHPFPM(
 {
@@ -14,6 +11,9 @@ var phpfpm = new PHPFPM(
     port: 9000,
     documentRoot: __dirname
 });
+
+// *** sendgrid test *** //
+var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
 
 // function helloTemplate(){
 //   var helper = require('sendgrid').mail
