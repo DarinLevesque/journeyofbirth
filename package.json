@@ -16,7 +16,10 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express-logger": "0.0.3",
-    "morgan": "^1.7.0"
+    "express-seo": "0.0.1",
+    "morgan": "^1.7.0",
+    "node-phpfpm": "^1.0.1",
+    "sendgrid": "^3.0.8"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -26,5 +29,13 @@
     "grunt-exec": "^1.0.0",
     "mocha": "^2.5.3",
     "zombie": "^4.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarinLevesque/journeyofbirth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DarinLevesque/journeyofbirth/issues"
+  },
+  "homepage": "https://github.com/DarinLevesque/journeyofbirth#readme"
 }

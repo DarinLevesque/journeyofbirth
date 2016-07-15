@@ -7,10 +7,10 @@ if( isset( $_GET['username'] ) AND $_GET['username'] != '' ):
 
 	$username = $_GET['username'];
 	$limit = ( isset( $_GET['count'] ) AND $_GET['count'] != '' ) ? $_GET['count'] : 2;
-	$consumerkey = "consumerkey";
-	$consumersecret = "consumersecret";
-	$accesstoken = "accesstoken";
-	$accesstokensecret = "accesstokensecret";
+	$consumerkey = "GvNbzrJI9YS2LIOd3ugbfkdpV";
+	$consumersecret = "wpfhLDu0xI5WAndDCCzujLkJCWOnTbEwiWZrx3p4bWTUskruvv";
+	$accesstoken = "39754573-db7xfZG3sknz93JJocfj0N4VztpQ7RUTeLVSuCyfV";
+	$accesstokensecret = "vSh5PUItNLzKVSlWnYDbhPwNxjt88RiUcQ8bjLsOtGEYx";
 
 	function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
 	  $connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
