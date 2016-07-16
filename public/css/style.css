@@ -11383,6 +11383,11 @@ button.toast-close-button {
 	border-top: 5px solid rgba(0,0,0,0.2);
 }
 
+#footer h2 {
+	font-family: 'Calligraffitti', cursive;
+	font-weight: 400;
+}
+
 .device-lg.sticky-footer #top-bar,
 .device-md.sticky-footer #top-bar { z-index: 299; }
 

@@ -1,58 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var PHPFPM = require('node-phpfpm');
 var fortune = require('./lib/fortune.js');
-
-// *** Allow PHP *** //
-var phpfpm = new PHPFPM(
-{
-    host: '127.0.0.1',
-    port: 9000,
-    documentRoot: __dirname
-});
-
-// *** sendgrid test *** //
-var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
-
-// function helloTemplate(){
-//   var helper = require('sendgrid').mail
-
-//   from_email = new helper.Email("kelli@journeyofbirth.com")
-//   to_email = new helper.Email("darinlevesque@gmail.com")
-//   subject = "Hello World from the SendGrid Node.js Library"
-//   content = new helper.Content("text/plain", "some text here")
-//   mail = new helper.Mail(from_email, subject, to_email, content)
-//   // The constructor above already creates our personalization object
-//   // -name- and -card- are substitutions in my template
-//   substitution = new helper.Substitution("-name-", "Example User")
-//   mail.personalizations[0].addSubstitution(substitution)
-//   substitution = new helper.Substitution("-card-", "Denver")
-//   mail.personalizations[0].addSubstitution(substitution)
-//   mail.setTemplateId("1f70cb4b-769e-4391-ae30-38e6e69cebe8")
-//   return mail.toJSON()
-// }
-
-// function send(toSend){
-//   //console.log(JSON.stringify(toSend, null, 2))
-//   //console.log(JSON.stringify(toSend))
-
-//   var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
-
-//   var requestBody = toSend
-//   var emptyRequest = require('sendgrid-rest').request
-//   var requestPost = JSON.parse(JSON.stringify(emptyRequest))
-//   requestPost.method = 'POST'
-//   requestPost.path = '/v3/mail/send'
-//   requestPost.body = requestBody
-//   sg.API(requestPost, function (response) {
-//     console.log(response.statusCode)
-//     console.log(response.body)
-//     console.log(response.headers)
-//   })
-// }
-
-// send(helloTemplate())
 
 // *** routes *** //
 var routes = require('./routes/index.js');
