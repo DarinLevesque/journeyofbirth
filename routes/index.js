@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY);
 // var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // app.get('/', function(req, res) {
@@ -27,46 +28,32 @@ router.get('/contact', function(req, res) {
 });
 
 router.post('/contact', function(req, res) {
-var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
-
-function helloTemplate(){
-  var helper = require('sendgrid').mail
-
-  from_email = new helper.Email("Kelli@journeyofbirth.com")
-  to_email = new helper.Email("info@pkcphotography.com")
-  subject = "Hello World from the SendGrid Node.js Library"
-  content = new helper.Content("text/plain", "some text here")
-  mail = new helper.Mail(from_email, subject, to_email, content)
-  // The constructor above already creates our personalization object
-  // -name- and -card- are substitutions in my template
-  substitution = new helper.Substitution("Sender_Name", "Example User")
-  mail.personalizations[0].addSubstitution(substitution)
-  substitution = new helper.Substitution("-card-", "Denver")
-  mail.personalizations[0].addSubstitution(substitution)
-  mail.setTemplateId("1f70cb4b-769e-4391-ae30-38e6e69cebe8")
-  return mail.toJSON()
-}
-
-function send(toSend){
-  //console.log(JSON.stringify(toSend, null, 2))
-  //console.log(JSON.stringify(toSend))
-
-  var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
-
-  var requestBody = toSend
-  var emptyRequest = require('sendgrid-rest').request
-  var requestPost = JSON.parse(JSON.stringify(emptyRequest))
-  requestPost.method = 'POST'
-  requestPost.path = '/v3/mail/send'
-  requestPost.body = requestBody
-  sg.API(requestPost, function (response) {
-    console.log(response.statusCode)
-    console.log(response.body)
-    console.log(response.headers)
-  })
-}
-
-send(helloTemplate())
+    var request = sg.emptyRequest()
+    request.body = {
+        "personalizations": [{
+            "to": [{
+                "email": "kelli@journeyofbirth.com"
+            }],
+            "subject": "JoB Contact Form: " + req.body.subject
+        }],
+        "from": {
+            "email": req.body.email,
+        },
+        "content": [{
+            "type": "text/plain",
+            "value": req.body.name + " " + req.body.phone + " " + "Services interested in: " + req.body.service + " " + req.body.comments
+        }]
+    };
+    request.method = 'POST'
+    request.path = '/v3/mail/send'
+    sg.API(request, function(response) {
+        console.log(response.statusCode)
+        console.log(response.body)
+        console.log(response.headers)
+        res.message_success("Email Sent Successfully")
+        res.end("Email Sent Successfully");
+        
+    })
 });
 
 router.get('/payment', function(req, res) {
