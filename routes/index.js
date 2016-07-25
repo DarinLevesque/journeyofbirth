@@ -50,7 +50,7 @@ router.post('/contact', function(req, res) {
         console.log(response.statusCode)
         console.log(response.body)
         console.log(response.headers)
-        res.message_success("Email Sent Successfully")
+        // res.message_success("Email Sent Successfully")
         res.end("Email Sent Successfully");
         
     })
